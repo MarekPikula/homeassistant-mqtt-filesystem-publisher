@@ -1156,6 +1156,18 @@ files = [
 ]
 
 [[package]]
+name = "types-paho-mqtt"
+version = "1.6.0.6"
+description = "Typing stubs for paho-mqtt"
+category = "dev"
+optional = false
+python-versions = "*"
+files = [
+    {file = "types-paho-mqtt-1.6.0.6.tar.gz", hash = "sha256:c2c263ee33010b23b2c53c1a6c4b4515ba6f94e8fa391e969c0e8cdd0256de49"},
+    {file = "types_paho_mqtt-1.6.0.6-py3-none-any.whl", hash = "sha256:c1314b3571fe7699f5e545f83c860a9a1edb885237649afe243dd0aca2f0d725"},
+]
+
+[[package]]
 name = "typing-extensions"
 version = "4.5.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -1325,4 +1337,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "f8d78e39d3bbfcae75db55bb1045bb2a1b667182995d9a6fb71edef30bd8d18b"
+content-hash = "0ade042b3742cd618f9c1431856c1845a04efe7f2085af0529a721d2f32c2cb4"
