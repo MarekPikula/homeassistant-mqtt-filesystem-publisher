@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hamqtt-fs-publisher"
-version = "0.1.0"
+version = "0.1.1"
 description = "Publish file content as MQTT topic compatible with HomeAssistant."
 authors = ["Marek Pikuła <marek@serenitycode.dev>"]
 maintainers = ["Marek Pikuła <marek@serenitycode.dev>"]
