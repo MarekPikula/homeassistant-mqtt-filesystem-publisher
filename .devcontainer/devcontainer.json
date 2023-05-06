@@ -30,6 +30,7 @@
 				"GitHub.vscode-pull-request-github",
 				"mhutchie.git-graph",
 				"ms-azuretools.vscode-docker",
+				"ms-python.python",
 				"njpwerner.autodocstring",
 				"redhat.vscode-yaml",
 				"ryanluker.vscode-coverage-gutters",
@@ -46,7 +47,7 @@
 				"python.testing.pytestEnabled": true,
 				"python.testing.pytestArgs": [
 					"tests",
-					"--cov=headscale_api",
+					"--cov=hamqtt_fs_publisher",
 					"--cov-report=term",
 					"--cov-report=xml:output/coverage/cov.xml",
 					"--cov-report=html:output/coverage/html"
