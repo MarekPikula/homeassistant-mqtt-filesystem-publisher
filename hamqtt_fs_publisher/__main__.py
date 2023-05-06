@@ -42,12 +42,11 @@ class MqttReader:
 
     def publish_read(self):
         """Read a value from file and publish it to MQTT broker."""
-        with open(self._config.read_path, encoding="utf-8") as read_file:
-            state = read_file.read()
-            if self._config.read_strip:
-                state = state.strip()
-            logger.debug('{}: Publishing state "{}".', self._log_name, state)
-            self._entity.publish_state(state)
+        state = self._config.read_path.read_text("utf-8")
+        if self._config.read_strip:
+            state = state.strip()
+        logger.debug('{}: Publishing state "{}".', self._log_name, state)
+        self._entity.publish_state(state)
         if not self._stop_event.is_set():
             self.start(False)
 
@@ -80,12 +79,29 @@ class MqttReader:
     "--config",
     "-c",
     default="config.yaml",
-    type=click.Path(exists=True, dir_okay=False, path_type=Path),
+    type=click.Path(dir_okay=False, path_type=Path),
     help="Configuration file (either YAML or JSON).",
 )
 def main(config: Path):
     """Run the HA MQTT filesystem publisher."""
     logger.info("Parsing configuration...")
+    config_found = False
+    config_default_dir = Path("hamqtt_fs_publisher")
+    for prefix in (
+        Path(),
+        Path("/etc") / config_default_dir,
+        Path.home() / ".config" / config_default_dir,
+    ):
+        tried_path = prefix / config
+        if tried_path.exists() and not tried_path.is_dir():
+            config_found = True
+            config = tried_path
+            logger.debug('Found configuration in "{}".', config)
+            break
+
+    if not config_found:
+        logger.error('Configuration not found at "{}" path.', config)
+
     config_parsed = Config.parse_file(config)
 
     logger.info("Connecting to MQTT broker...")
