@@ -23,7 +23,7 @@ repos:
         language: system
         types: [python]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.262"
+    rev: "v0.0.265"
     hooks:
       - id: ruff
   - repo: https://github.com/pre-commit/mirrors-mypy
