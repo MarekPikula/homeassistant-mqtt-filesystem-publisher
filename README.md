@@ -17,6 +17,26 @@ It can be useful, e.g., to publish system metrics from `/sys`.
    documentation](https://github.com/home-assistant/addons/blob/master/mosquitto/DOCS.md).
 3. Run `hamqtt_fs_publisher --config <config_file_name>`.
 
+> **Note:** The configuration file path could be either a relative/absolute
+> path, or a file under `/etc/hamqtt_fs_publisher` or
+> `~/.config/hamqtt_fs_publisher`.
+
+## Systemd service
+
+If you want to run this script as a systemd service you could copy the example
+service file from `examples/hamqtt_fs_publisher@.service` to either
+`/etc/systemd/system/` or `~/.config/systemd/user/` (if you want to run it in
+user mode). Then copy the configuration file to one of the standard
+configuration directories (i.e., `/etc/hamqtt_fs_publisher` or
+`~/.config/hamqtt_fs_publisher`.)
+
+To enable and start the unit in system mode run:
+
+```shell
+$ systemd daemon-reload
+$ systemd enable --now hamqtt_fs_publisher@<config_file_name>
+```
+
 ## Supported features
 
 - Auto-discovery in HomeAssistant.

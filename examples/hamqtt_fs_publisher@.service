@@ -1,0 +1,10 @@
+[Unit]
+Description=Run a HomeAssistant MQTT filesystem publisher
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=hamqtt_fs_publisher --config %i
+
+[Install]
+WantedBy=default.target
