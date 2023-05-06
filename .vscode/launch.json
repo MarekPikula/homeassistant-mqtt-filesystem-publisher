@@ -11,7 +11,7 @@
             "module": "hamqtt_fs_publisher.__main__",
             "justMyCode": false,
             "cwd": "${workspaceFolder}",
-            "args": ["--config", "config.example.yaml"]
+            "args": ["--config", "examples/config.example.yaml"]
         },
         {
             "name": "Python: Generate configuration schema",

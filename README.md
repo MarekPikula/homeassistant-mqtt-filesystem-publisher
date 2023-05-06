@@ -7,8 +7,8 @@ It can be useful, e.g., to publish system metrics from `/sys`.
 ## Quick start
 
 1. Install the Python package: `pip install hamqtt-fs-publisher`.
-2. Create a configuration (example in `config.example.yaml`). It can be either
-   YAML or JSON. There is a pre-generated JSON schema in
+2. Create a configuration (example in `examples/config.example.yaml`). It can be
+   in either YAML or JSON format. There is a pre-generated JSON schema in
    `hamqtt_fs_publisher/configuration.schema.json`, which can be used, e.g.,
    with VS Code (the current repository is pre-configured for `config.json` and
    `config.yaml`). Remember to set proper authorization details for the MQTT
