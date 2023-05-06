@@ -1,3 +1,6 @@
+[![build](https://github.com/MarekPikula/homeassistant-mqtt-filesystem-publisher/workflows/build/badge.svg)](https://github.com/MarekPikula/homeassistant-mqtt-filesystem-publisher/actions?query=workflow%3Abuild+branch%3Amain)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hamqtt-fs_publisher.svg)](https://pypi.org/project/hamqtt-fs_publisher)
+
 # HomeAssistant MQTT filesystem publisher
 
 Publish file content as an MQTT topic compatible with HomeAssistant.
