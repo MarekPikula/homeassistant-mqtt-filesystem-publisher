@@ -6,7 +6,14 @@ from typing import List, Optional
 
 from ha_mqtt.util import EntityCategory, HaDeviceClass  # type: ignore
 from pydantic import BaseModel, Field
-from pydantic_yaml import YamlModel
+
+try:
+    from pydantic_yaml import YamlModel
+except ImportError:
+    # Fall back to JSON-only model.
+    from pydantic import (  # type: ignore # pylint: disable=W0404,C0412 # isort: skip
+        BaseModel as YamlModel,
+    )
 
 
 class Mqtt(BaseModel):  # pylint: disable=R0903

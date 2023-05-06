@@ -9,7 +9,10 @@ It can be useful, e.g., to publish system metrics from `/sys`.
 
 ## Quick start
 
-1. Install the Python package: `pip install hamqtt-fs-publisher`.
+1. Install the Python package: `pip install hamqtt-fs-publisher`. If you want to
+   have support for YAML configuration format install with `ruamel` or `pyyaml`
+   extras depending on the YAML library of choice (recommended `ruamel`, e.g.,
+   `pip install hamqtt-fs-publisher[ruamel]`).
 2. Create a configuration (example in `examples/config.example.yaml`). It can be
    in either YAML or JSON format. There is a pre-generated JSON schema in
    `hamqtt_fs_publisher/configuration.schema.json`, which can be used, e.g.,

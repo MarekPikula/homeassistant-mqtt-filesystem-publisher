@@ -1,0 +1,34 @@
+{
+  "mqtt": {
+    "client_id": "example",
+    "user": "test",
+    "password": "test"
+  },
+  "devices": [
+    {
+      "name": "WiFi statistics",
+      "unique_id": "wifi_stats",
+      "entities": [
+        {
+          "name": "RX bytes",
+          "unique_id": "rx_bytes",
+          "sensor": {
+            "unit": "B",
+            "device_class": "data_size",
+            "read_interval": 1,
+            "read_path": "/sys/class/net/wlp0s20f3/statistics/rx_bytes"
+          }
+        },
+        {
+          "name": "TX bytes",
+          "unique_id": "tx_bytes",
+          "sensor": {
+            "unit": "B",
+            "device_class": "data_size",
+            "read_path": "/sys/class/net/wlp0s20f3/statistics/tx_bytes"
+          }
+        }
+      ]
+    }
+  ]
+}

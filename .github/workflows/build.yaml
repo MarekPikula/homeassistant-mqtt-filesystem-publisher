@@ -57,7 +57,7 @@ jobs:
           cache: "poetry"
 
       - name: Install dependencies
-        run: poetry install --only main,dev,test
+        run: poetry install -E ruamel --only main,dev,test
 
       - name: Test
         run: |
@@ -93,7 +93,7 @@ jobs:
           python-version: "3.11"
           cache: "poetry"
       - name: Install dependencies
-        run: poetry install --only main,dev,lint
+        run: poetry install -E ruamel --only main,dev,lint
       - name: Run formatter
         run: poetry run ${{ matrix.tool }} hamqtt_fs_publisher/ tests/
 
@@ -109,7 +109,7 @@ jobs:
   #         python-version: "3.11"
   #         cache: "poetry"
   #     - name: Install dependencies
-  #       run: poetry install --only main,doc
+  #       run: poetry install -E ruamel --only main,doc
   #     - name: Build docs
   #       run: poetry run make -C docs/ html
   #     - name: Upload the built documentation

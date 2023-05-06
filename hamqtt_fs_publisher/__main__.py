@@ -1,5 +1,6 @@
 """HomeAssistant MQTT filesystem publisher service."""
 
+import sys
 import time
 from pathlib import Path
 from threading import Event, Timer
@@ -101,6 +102,7 @@ def main(config: Path):
 
     if not config_found:
         logger.error('Configuration not found at "{}" path.', config)
+        sys.exit(1)
 
     config_parsed = Config.parse_file(config)
 

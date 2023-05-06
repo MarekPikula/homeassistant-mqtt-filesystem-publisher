@@ -12,6 +12,7 @@
             "justMyCode": false,
             "cwd": "${workspaceFolder}",
             "args": ["--config", "examples/config.example.yaml"]
+            // "args": ["--config", "examples/config.example.json"]
         },
         {
             "name": "Python: Generate configuration schema",
