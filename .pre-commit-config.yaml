@@ -30,3 +30,11 @@ repos:
     rev: "v1.2.0"
     hooks:
       - id: mypy
+  - repo: local
+    hooks:
+      - id: generate_schema
+        name: Generate configuration schema
+        language: system
+        files: hamqtt_fs_publisher/configuration.py
+        pass_filenames: false
+        entry: poetry run python -m hamqtt_fs_publisher.configuration

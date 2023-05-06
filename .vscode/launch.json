@@ -8,7 +8,16 @@
             "name": "Python: HA MQTT fs publisher",
             "type": "python",
             "request": "launch",
-            "module": "hamqtt_fs_publisher.__init__",
+            "module": "hamqtt_fs_publisher.__main__",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}",
+            "args": ["--config", "config.example.yaml"]
+        },
+        {
+            "name": "Python: Generate configuration schema",
+            "type": "python",
+            "request": "launch",
+            "module": "hamqtt_fs_publisher.configuration",
             "justMyCode": false,
             "cwd": "${workspaceFolder}",
         },
