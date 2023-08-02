@@ -183,6 +183,11 @@
                     "default": true,
                     "type": "boolean"
                 },
+                "read_multiplier": {
+                    "title": "Read Multiplier",
+                    "description": "Multiply read value by given amount.",
+                    "type": "number"
+                },
                 "unit": {
                     "title": "Unit",
                     "description": "Unit of measurement, example: \"\u00b0C\",",

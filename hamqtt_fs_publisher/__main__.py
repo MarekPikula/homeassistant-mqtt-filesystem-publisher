@@ -46,6 +46,14 @@ class MqttReader:
         state = self._config.read_path.read_text("utf-8")
         if self._config.read_strip:
             state = state.strip()
+        if self._config.read_multiplier is not None:
+            try:
+                state = float(state) * self._config.read_multiplier
+            except ValueError:
+                logger.error(
+                    "{}: Failed to apply multiplication due to float conversion error.",
+                    self._log_name,
+                )
         logger.debug('{}: Publishing state "{}".', self._log_name, state)
         self._entity.publish_state(state)
         if not self._stop_event.is_set():
@@ -88,6 +96,7 @@ def main(config: Path):
     logger.info("Parsing configuration...")
     config_found = False
     config_default_dir = Path("hamqtt_fs_publisher")
+    # TODO: Search for both config.json and yaml if not defined.
     for prefix in (
         Path(),
         Path("/etc") / config_default_dir,

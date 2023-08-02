@@ -34,6 +34,9 @@ class ReadMixin(BaseModel):  # pylint: disable=R0903
     read_strip: bool = Field(
         True, description="Perform a strip operation on the read value."
     )
+    read_multiplier: Optional[float] = Field(
+        None, description="Multiply read value by given amount."
+    )
 
 
 class WriteMixin(BaseModel):  # pylint: disable=R0903
